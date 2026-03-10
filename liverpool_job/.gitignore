@@ -1,0 +1,6 @@
+slides.*
+!slides.pdf
+!slides.tex
+test
+aux
+_minted-slides/
