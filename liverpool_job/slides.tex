@@ -31,7 +31,8 @@
 \usepackage{subcaption}
 
 %\usepackage{enumitem} % fails with beamer
-\usepackage{pifont}
+\usepackage[outputdir=aux]{minted}
+\usepackage[svgnames]{xcolor}
 
 % For \titlepage
 \title{Convolutional Networks and Autoencoders}
@@ -47,7 +48,7 @@
 \NewDocumentCommand{\pytorch}{}{\includegraphics[width=\frameworksize]{./pdf/pytorch.pdf}}
 
 % Downloads
-\NewDocumentCommand{\downloadsize}{}{5em}
+\NewDocumentCommand{\downloadsize}{}{5.5em}
 \NewDocumentCommand{\hs}{}{\hspace{0em}}
 \NewDocumentCommand{\wdf}{}{\hs\includegraphics[width=\downloadsize]{./pdf/wdf-parser_downloads.pdf}}
 \NewDocumentCommand{\spc}{}{\hs\includegraphics[width=\downloadsize]{./pdf/spc-parser_downloads.pdf}}
@@ -67,26 +68,12 @@
     \begin{enumerate}
     \setlength\itemsep{0.3em}
     \item[a)] Inverse design with autoencoders,
-    \item[b)] Object detection with convolutional networks.
+    \item[b)] Object detection with convolutional networks,
     \end{enumerate}
   \setlength\itemsep{1em}
-  \item \color<6->{gray} Binary parsers for chemical data,
+  \item Binary parsers for chemical data,
   \item \color<6->{gray} Mathematical optimisation.
   \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Framing the problem}
-Questions used to frame the project:
-
-\vspace{1em}
-\begin{itemize}
-  \item What is the end-goal?
-  \item Can it be split into subgoals?
-  \item Estimated time to completion?
-  \item Are there alternative ways to solve the problem?
-\end{itemize}
-
 \end{frame}
 
 
@@ -167,6 +154,28 @@ Questions used to frame the project:
 \caption{\copyright{} European Union, 1998--2026.}
 \end{figure}
 \end{frame}
+
+\begin{frame}[fragile]{Binary Data Manipulation - iobuffer}
+\texttt{iobuffer} is a helper to write binary parsers.
+
+\begin{minted}[bgcolor=Beige,highlightlines={4,9}]{typescript}
+
+import { IOBuffer } from 'iobuffer';
+
+const io = new IOBuffer() // offset 0
+io.writeChars('Hello world') // offset now 11
+  .back(2) // Back to 9
+  .skip(1) // Forward to 10
+  .rewind() // back to 0
+  .readArray(11, "uint8") // read 11 bytes at once
+
+\end{minted}
+
+\textit{Contributions}: text decoder, readArrays of typed-data, host-endianness detection.
+
+\end{frame}
+
+
 
 \begin{frame}{Other Projects}
 \small
