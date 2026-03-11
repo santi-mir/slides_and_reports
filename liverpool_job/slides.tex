@@ -42,25 +42,38 @@
 \date{March 12, 2026}
 
 % Shortcuts
-\NewDocumentCommand{\frameworksize}{}{1em}
-\NewDocumentCommand{\github}{}{\includegraphics[width=0.8em]{./pdf/github.pdf}}
-\NewDocumentCommand{\npm}{}{\includegraphics[width=0.8em]{./pdf/npm.pdf}}
-\NewDocumentCommand{\tf}{}{\includegraphics[width=\frameworksize]{./pdf/tensorflow.pdf}}
-\NewDocumentCommand{\pytorch}{}{\includegraphics[width=\frameworksize]{./pdf/pytorch.pdf}}
+\NewDocumentCommand{\iconSize}{}{1em}
+\NewDocumentCommand{\dlSize}{}{5.5em}
+% render with [sizej, or with iconSize
+% the % signs are to have correct spacing!
+\NewDocumentCommand{\myPDFIcon}{om}{%
+  \IfValueTF{#1}{%
+    \includegraphics[width=#1]{#2}%
+    }{%
+      \includegraphics[width=\iconSize]{#2}%
+    }%
+}
 
-% Downloads
-\NewDocumentCommand{\downloadsize}{}{5.5em}
-\NewDocumentCommand{\hs}{}{\hspace{0em}}
-\NewDocumentCommand{\wdf}{}{\hs\includegraphics[width=\downloadsize]{./pdf/wdf-parser_downloads.pdf}}
-\NewDocumentCommand{\spc}{}{\hs\includegraphics[width=\downloadsize]{./pdf/spc-parser_downloads.pdf}}
-\NewDocumentCommand{\iobuffer}{}{\hs\includegraphics[width=\downloadsize]{./pdf/iobuffer_downloads.pdf}}
-\NewDocumentCommand{\fcnnls}{}{\hs\includegraphics[width=\downloadsize]{./pdf/fcnnls_downloads.pdf}}
-\NewDocumentCommand{\regression}{}{\hs\includegraphics[width=\downloadsize]{./pdf/regression-simple-linear_downloads.pdf}}
-\NewDocumentCommand{\regressionp}{}{\hs\includegraphics[width=\downloadsize]{./pdf/regression-polynomial.pdf}}
+% Companies' Icons
+\NewDocumentCommand{\githubIcon}{}{\myPDFIcon{./pdf/github.pdf}}
+\NewDocumentCommand{\npmIcon}{}{\myPDFIcon{./pdf/npm.pdf}}
+\NewDocumentCommand{\tfIcon}{}{\myPDFIcon{pdf/tensorflow.pdf}}
+\NewDocumentCommand{\pytorchIcon}{}{\myPDFIcon{pdf/pytorch.pdf}}
+
+% Download Icons
+\NewDocumentCommand{\wdf}{}{\myPDFIcon[\dlSize]{./pdf/wdf-parser_downloads.pdf}}
+\NewDocumentCommand{\spc}{}{\myPDFIcon[\dlSize]{./pdf/spc-parser_downloads.pdf}}
+\NewDocumentCommand{\iobuffer}{}{\myPDFIcon[\dlSize]{./pdf/iobuffer_downloads.pdf}}
+\NewDocumentCommand{\fcnnls}{}{\myPDFIcon[\dlSize]{./pdf/fcnnls_downloads.pdf}}
+\NewDocumentCommand{\regression}{}{\myPDFIcon[\dlSize]{./pdf/regression-simple-linear_downloads.pdf}}
+\NewDocumentCommand{\regressionp}{}{\myPDFIcon[\dlSize]{./pdf/regression-polynomial.pdf}}
 
 \NewDocumentCommand{\xp}{m}{%
   \textcolor{blue!85!black}{\textmd{#1}}%
 }
+
+% Table of hrefs
+\NewDocumentCommand{\ghref}{mm}{\href{https://github.com/#1/#2}{\texttt{#2}}}
 
 \begin{document}
 \frame{\titlepage}
@@ -136,7 +149,7 @@ First 2--3 months:\footnote{Done at the University of Glasgow.}
 \begin{frame}{Object Detection - Results}
   \begin{itemize}
     \item[] Pseudonymisation of Identity Documents at Zakodium.\footnote{Demo: \url{https://mrz.zakodium.com/}}
-    \item[] Frameworks: Tensorflow.js \tf{}, Pytorch \pytorch{}.
+    \item[] Frameworks: \tfIcon{} Tensorflow.js, \pytorchIcon{} Pytorch
   \end{itemize}
 \pause
 \vspace{0.6em}
@@ -183,15 +196,15 @@ io.writeChars('Hello world') // offset now 11
 Base URL for projects: \url{https://github.com/santi-mir/<project>}. \vspace{1.5em}
 
 \begin{tabular}{lcp{3.5cm}}
-  \github{} Github Project & \npm{} npm $\downarrow$ & Description \\[0.3em]
+  \githubIcon{} Github Project & \npmIcon{} npm $\downarrow$ & Description \\[0.3em]
   \hline
   \noalign{\vskip 0.5em}
-  \texttt{iobuffer} & \iobuffer{}  & Binary data manipulation library \\[0.6em]
-  \texttt{regression-simple-linear} & \regression{}  & Simple linear regression \\[0.6em]
-  \texttt{regression-polynomial} & \regressionp{}  & Polynomial regression \\[0.6em]
-  \texttt{fcnnls} & \fcnnls{}  & Fast combinatorial non-negative least squares \\[0.6em]
-  \texttt{spc-parser} & \spc{}  & GRAMS \texttt{.spc} parser \\[0.6em]
-  \texttt{wdf-parser} & \wdf{}  & WDF Raman file parser \\[0.6em]
+  \ghref{image-js}{iobuffer} & \iobuffer{}  & Binary data manipulation library \\[0.6em]
+  \ghref{mljs}{regression-simple-linear} & \regression{}  & Simple linear regression \\[0.6em]
+  \ghref{mljs}{regression-polynomial} & \regressionp{}  & Polynomial regression \\[0.6em]
+  \ghref{mljs}{fcnnls} & \fcnnls{}  & Fast combinatorial non-negative least squares \\[0.6em]
+  \ghref{cheminfo}{spc-parser} & \spc{}  & GRAMS \texttt{.spc} parser \\[0.6em]
+  \ghref{cheminfo}{wdf-parser} & \wdf{}  & WDF Raman file parser \\[0.6em]
 
 \hline
 \end{tabular}
