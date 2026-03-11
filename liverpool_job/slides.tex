@@ -35,7 +35,7 @@
 \usepackage[svgnames]{xcolor}
 
 % For \titlepage
-\title{Convolutional Networks and Autoencoders}
+\title{Neural Networks and Binary Data}
 \author{Santiago Miranda}
 \institute{PhD Application}
 \date{March 12, 2026}
@@ -64,6 +64,7 @@
 % What I will talk about.
 \begin{frame}{Previous Work}
   \begin{itemize}[<+->]
+  \setlength\itemsep{0.5em}
   \item Neural Networks,
     \begin{enumerate}
     \setlength\itemsep{0.3em}
@@ -102,21 +103,21 @@
 
 \begin{frame}{Generative AI - Inspiration}
 \begin{figure}
-    \begin{subfigure}[h]{0.4\textwidth}
-    \flushleft
-      \includegraphics[width=\textwidth]{./jpeg/CVAE.jpeg}
-      \caption{VAE: Aspuru-Guzik et. al.\label{fig:VAE}}
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=0.9\textwidth]{./jpeg/CVAE.jpeg}
+      \caption{VAE: Aspuru-Guzik et. al.}
+      \label{fig:VAE}
     \end{subfigure}
-    \hspace{1em}
+    \vrule
+    \hspace{0.6em}
     \pause
-    \begin{subfigure}[h]{0.5\textwidth}
-      \includegraphics[trim=0 0 18cm 0, width=\textwidth]{./png/interpretability.png}
-      \caption{Transformer Orion Dollar et. al. \label{fig:TRANSFORMER}}
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[trim=0 0 35cm 0, width=0.7\textwidth]{./png/interpretability.png}
+      \caption{Transformer Orion Dollar et. al.}
+      \label{fig:TRANSFORMER}
     \end{subfigure}
 \end{figure}
-
 \end{frame}
-
 
 
 \begin{frame}{Object Detection}
@@ -143,12 +144,12 @@
 \centering
 \begin{subfigure}[t]{0.4\textwidth}
 \includegraphics[width=\textwidth]{./png/face_signature_detection_highlighted.png}
-\caption{Face and signature detection\label{fig:face}}
+\caption{Face and signature detection}\label{fig:face}
 \end{subfigure}
 \pause
 \begin{subfigure}[t]{0.4\textwidth}
 \includegraphics[width=\textwidth]{./png/face_barcode_mrz_detection_highlighted.png}
-\caption{Face, barcode, MRZ detection\label{fig:barcode}}
+\caption{Face, barcode, MRZ detection}\label{fig:barcode}
 \end{subfigure}
 \pause
 \caption{\copyright{} European Union, 1998--2026.}
