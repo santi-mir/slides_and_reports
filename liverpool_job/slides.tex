@@ -9,15 +9,16 @@
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[page number]
 \setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{caption}[numbered]
-\setbeamerfont{caption}{size=\small}
+% \setbeamertemplate{caption}[numbered]
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamercolor{caption name}{fg=gray!70!black}
+\setbeamercolor{background canvas}{bg=gray!5}
 
 % Packages
 \usepackage[utf8]{inputenc}
 
 % Links
 \usepackage{hyperref}
-\setlength\itemsep{2em}
 \hypersetup{
   colorlinks=true,
     linkcolor=blue,
@@ -118,12 +119,12 @@
 \end{frame}
 
 \begin{frame}{Generative AI - Project Results}
-First 2--3 months:\footnote{Done at the University of Glasgow.}
+First 2--3 months:\footnote{Work carried out at the University of Glasgow.}
 \begin{description}
-   \item[Survey] deep learning models $\rightarrow$ selected VAE (Fig. \ref{fig:VAE}),
-   \item[Implement] simplified model (Keras 3),
-   \item[Deploy] quantised ONNX model in browser,
-   \item[Package] document, test, notebooks.
+   \item[Literature Review] deep learning models $\rightarrow$ selected VAE (Fig. \ref{fig:VAE}),
+   \item[Implementation] simplified model (Keras 3),
+   \item[Deployment] quantised ONNX model in browser,
+   \item[Reproducibility] document, test, notebooks.
 \end{description}
 \pause
 
@@ -131,7 +132,7 @@ First 2--3 months:\footnote{Done at the University of Glasgow.}
 \textit{Planned}:
 \begin{description}
   \item[Optimise] UV HOMO-LUMO gap,
-  \item[Select] candidate for robotic synthesis.
+  \item[Select] candidates for robotic synthesis.
 \end{description}
 \end{frame}
 
@@ -150,9 +151,10 @@ First 2--3 months:\footnote{Done at the University of Glasgow.}
 
 
 \begin{frame}{Object Detection - Results}
+  \setbeamertemplate{itemize item}{\textbullet}
   \begin{itemize}
-    \item[] Pseudonymisation of IDs at Zakodium.\footnote{Demo: \url{https://mrz.zakodium.com/}}
-    \item[] Frameworks: \tfIcon{} Tensorflow.js, \pytorchIcon{} Pytorch.
+    \item Pseudonymisation of IDs at Zakodium (\href{https://mrz.zakodium.com}{Demo site})
+    \item Frameworks: \tfIcon{} Tensorflow.js, \pytorchIcon{} Pytorch
   \end{itemize}
 \pause
 \vspace{0.6em}
