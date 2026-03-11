@@ -34,6 +34,7 @@
 %\usepackage{enumitem} % fails with beamer
 \usepackage[outputdir=aux]{minted}
 \usepackage[svgnames]{xcolor}
+\usepackage{booktabs}
 
 % For \titlepage
 \title{Neural Networks and Binary Data}
@@ -195,11 +196,12 @@ io.writeChars('Hello world') // offset now 11
 
 \begin{frame}{Other Projects}
 \small
-Base URL for projects: \url{https://github.com/santi-mir/<project>}. \vspace{1.2em}
-
-\begin{tabular}{lcp{3.5cm}}
+\begin{table}
+\begin{center}
+\begin{tabular}[t]{@{}lcp{3.7cm}@{}}
+  \toprule
   \githubIcon{} Github Project & \npmIcon{} npm $\downarrow$ & Description \\[0.3em]
-  \hline
+  \midrule
   \noalign{\vskip 0.5em}
   \gHref{image-js}{iobuffer} & \iobuffer{}  & Binary data manipulation library \\[0.6em]
   \gHref{mljs}{regression-simple-linear} & \regression{}  & Simple linear regression \\[0.6em]
@@ -208,13 +210,12 @@ Base URL for projects: \url{https://github.com/santi-mir/<project>}. \vspace{1.2
   \gHref{cheminfo}{spc-parser} & \spc{}  & GRAMS \texttt{.spc} parser \\[0.6em]
   \gHref{cheminfo}{wdf-parser} & \wdf{}  & WDF Raman file parser \\[0.6em]
 
-\hline
+  \href{https://mrz.zakodium.com}{IDs Project} & -- &  Pseudonymisation of IDs.\\
+\bottomrule
 \end{tabular}
-
-\vspace{1.5em}
-Most are also published in Zenodo.\\[1em]
-Demo site for Pseudonymisation of IDs project: \url{https://mrz.zakodium.com}.
-
+\end{center}
+\caption{\footnotesize Github hosted projects, excepting last (IDs) project.}
+\end{table}
 \end{frame}
 
 \begin{frame}
