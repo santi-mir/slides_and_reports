@@ -58,43 +58,66 @@
 \NewDocumentCommand{\regression}{}{\hs\includegraphics[width=\downloadsize]{./pdf/regression-simple-linear_downloads.pdf}}
 \NewDocumentCommand{\regressionp}{}{\hs\includegraphics[width=\downloadsize]{./pdf/regression-polynomial.pdf}}
 
+\NewDocumentCommand{\xp}{m}{%
+  \textcolor{blue!85!black}{\textmd{#1}}%
+}
+
 \begin{document}
 \frame{\titlepage}
 
 % begin-frame-title
 % What I will talk about.
-\begin{frame}{Previous Work}
-  \begin{itemize}[<+->]
-  \setlength\itemsep{0.5em}
-  \item Neural Networks,
-    \begin{enumerate}
-    \setlength\itemsep{0.3em}
-    \item[a)] Inverse design with autoencoders,
-    \item[b)] Object detection with convolutional networks,
-    \end{enumerate}
-  \setlength\itemsep{1em}
-  \item Binary parsers for chemical data,
-  \item \color<6->{gray} Mathematical optimisation.
+\begin{frame}{Areas of experience}
+  \setbeamertemplate{itemize item}{}
+  \setbeamertemplate{itemize subitem}{\textbullet}
+  \begin{itemize}
+  \setlength\itemsep{1.5em}
+  \item \xp{Research}
+    \begin{itemize}
+      \setlength\itemsep{0.3em}
+    \item Molecular inverse design with VAEs.
+    \end{itemize}
+    \pause
+  \item \xp{Applied ML}
+    \begin{itemize}
+      \setlength\itemsep{0.3em}
+    \item Object detection systems (YOLOX).
+    \end{itemize}
+    \pause
+  \item \xp{Scientific Computing}
+    \begin{itemize}
+      \setlength\itemsep{0.3em}
+      \item Mathematical optimisation algorithms
+      \item Binary parsers for spectroscopy data
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Generative AI}
-  Outline and results:\footnote{Done at the University of Glasgow.}
-\vspace{1em}
+\begin{frame}{Generative AI - Inspiration}
+\begin{figure}
+    \caption{VAE: Aspuru-Guzik et. al.}
+    \includegraphics[width=0.6\textwidth]{./jpeg/CVAE.jpeg}
+    \label{fig:VAE}
+\end{figure}
+\begin{itemize}
+\setbeamertemplate{itemize item}{$\bullet$}
+\item \textit{Concept}: learns a continuous vector representation;
+\item \textit{Questions}: Can the latent space be interpretable? Can the decoding rate be improved?
+\end{itemize}
+\end{frame}
 
-\textit{Completed} (first 2--3 months):
-
+\begin{frame}{Generative AI - Project Results}
+First 2--3 months:\footnote{Done at the University of Glasgow.}
 \begin{description}
    \item[Survey] deep learning models $\rightarrow$ selected VAE (Fig. \ref{fig:VAE}),
    \item[Implement] simplified model (Keras 3),
-   \item[Deploy] quantise model ONNX model in browser,
+   \item[Deploy] quantised ONNX model in browser,
    \item[Package] document, test, notebooks.
 \end{description}
 \pause
 
 \vspace{1em}
-
 \textit{Planned}:
 \begin{description}
   \item[Optimise] UV HOMO-LUMO gap,
@@ -102,26 +125,8 @@
 \end{description}
 \end{frame}
 
-\begin{frame}{Generative AI - Inspiration}
-\begin{figure}
-    \begin{subfigure}[b]{0.45\textwidth}
-      \includegraphics[width=0.9\textwidth]{./jpeg/CVAE.jpeg}
-      \caption{VAE: Aspuru-Guzik et. al.}
-      \label{fig:VAE}
-    \end{subfigure}
-    \vrule
-    \hspace{0.6em}
-    \pause
-    \begin{subfigure}[b]{0.45\textwidth}
-      \includegraphics[trim=0 0 35cm 0, width=0.68\textwidth]{./png/interpretability.png}
-      \caption{Transformer Orion Dollar et. al.}
-      \label{fig:TRANSFORMER}
-    \end{subfigure}
-\end{figure}
-\end{frame}
 
-
-\begin{frame}{Object Detection}
+\begin{frame}{Object Detection - Overview}
 \begin{figure}
 \centering
 \caption{Project's Development Stages}
@@ -134,7 +139,7 @@
 \end{frame}
 
 
-\begin{frame}{Object Detection}
+\begin{frame}{Object Detection - Results}
   \begin{itemize}
     \item[] Pseudonymisation of Identity Documents at Zakodium.\footnote{Demo: \url{https://mrz.zakodium.com/}}
     \item[] Frameworks: Tensorflow.js \tf{}, Pytorch \pytorch{}.
@@ -207,7 +212,6 @@ Most are also published in Zenodo.
   \setlength\itemsep{2em}
   \item ID cards, Figs. \ref{fig:face} and \ref{fig:barcode}: \url{https://commons.wikimedia.org/wiki/Category:Identity_cards_of_France}
   \item VAE (2018) Fig. \ref{fig:VAE}: \url{https://pubs.acs.org/doi/full/10.1021/acscentsci.7b00572}
-  \item Transformer (2021) Fig. \ref{fig:TRANSFORMER}: \url{https://pubs.rsc.org/en/content/articlehtml/2021/sc/d1sc01050f}, the image was modified (cropped) to fit into the slide.
 \end{itemize}
 \end{frame}
 \begin{frame}
