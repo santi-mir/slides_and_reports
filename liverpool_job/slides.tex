@@ -4,44 +4,52 @@
 \usetheme{Madrid}
 \usecolortheme{default}
 
-
-% Configure the template
+%==============================
+%   Configure the template
+%==============================
 \beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[page number]
-\setbeamertemplate{enumerate items}[default]
-% \setbeamertemplate{caption}[numbered]
+\setbeamercolor{background canvas}{bg=gray!5}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamercolor{caption name}{fg=gray!70!black}
-\setbeamercolor{background canvas}{bg=gray!5}
+\setbeamertemplate{footline}[page number]
+% \setbeamertemplate{enumerate items}[default]
+% \setbeamertemplate{caption}[numbered]
 
-% Packages
+%==============================
+%           Packages
+%==============================
 \usepackage[utf8]{inputenc}
-
-% Links
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue!80,
-  }
-\urlstyle{same}
-
 % Images
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-
 %\usepackage{enumitem} % fails with beamer
-\usepackage[outputdir=aux]{minted}
-\usepackage[svgnames]{xcolor}
-\usepackage{booktabs}
+\usepackage{minted} % reduce clutter.
+\usepackage[svgnames]{xcolor} % bgcolor for minted.
+\usepackage{booktabs} % \{top,mid,bottom}line
+
+% Links, TNSS book recommends loading it last.
+\usepackage{hyperref}
+\hypersetup{
+% colorlinks=true,
+% linkcolor=blue,
+  urlcolor=blue!80,
+  pdfinfo = {
+  Title = Slides for PhD Application,
+  Author = Santiago Miranda,
+  Subject = Neural Networks and Binary Parsers,
+  Creator = Santiago Miranda,
+  Keywords = {chemistry, compchem, AI},
+  Producer = LuaTeX,
+  }
+}
+\urlstyle{same}
 
 % For \titlepage
 \title{Neural Networks and Binary Data}
 \author{Santiago Miranda}
 \institute{PhD Application}
-\date{March 12, 2026}
+\date{March 13, 2026}
 
 % ================================
 %          COMMANDS
@@ -85,104 +93,104 @@
 \frame{\titlepage}
 
 \begin{frame}{Areas of experience}
-  \setbeamertemplate{itemize item}{}
-  \setbeamertemplate{itemize subitem}{--}
-  \begin{itemize}
-  \setlength\itemsep{1.5em}
-  \item \xp{Deep Learning}
-    \begin{itemize}[<+->]
-    \setlength\itemsep{0.3em}
-    \item<2-> Molecular inverse design with VAEs
-    \item<3-> Object detection systems (YOLOX)
-    \end{itemize}
-  \item \xp{Scientific Computing}
-    \begin{itemize}[<+->]
-      \setlength\itemsep{0.3em}
-      \item<4-> Binary parsers for spectroscopy data
-      \item<5-> \textcolor<6->{gray}{Mathematical optimisation algorithms}
-    \end{itemize}
-  \end{itemize}
+	\setbeamertemplate{itemize item}{}
+	\setbeamertemplate{itemize subitem}{--}
+	\begin{itemize}
+		\setlength\itemsep{1.5em}
+		\item \xp{Deep Learning}
+		      \begin{itemize}[<+->]
+			      \setlength\itemsep{0.3em}
+			      \item<2-> Molecular inverse design with VAEs
+			      \item<3-> Object detection systems (YOLOX)
+		      \end{itemize}
+		\item \xp{Scientific Computing}
+		      \begin{itemize}[<+->]
+			      \setlength\itemsep{0.3em}
+			      \item<4-> Binary parsers for spectroscopy data
+			      \item<5-> \textcolor<6->{gray}{Mathematical optimisation algorithms}
+		      \end{itemize}
+	\end{itemize}
 \end{frame}
 
 
 \begin{frame}{Generative AI - Inspiration}
-\setbeamertemplate{itemize item}{$\bullet$}
-\begin{figure}
-  \caption{VAE: \href{https://pubs.acs.org/doi/full/10.1021/acscentsci.7b00572}{Aspuru-Guzik et. al.}}
-    \includegraphics[width=0.6\textwidth]{./jpeg/CVAE.jpeg}
-    \label{fig:VAE}
-\end{figure}
-\begin{itemize}
-\item Learns a continuous vector representation;
-\item Can the latent space be interpretable? How to enhance valid-decoding rate?
-\end{itemize}
+	\setbeamertemplate{itemize item}{$\bullet$}
+	\begin{figure}
+		\caption{VAE: \href{https://pubs.acs.org/doi/full/10.1021/acscentsci.7b00572}{Aspuru-Guzik et. al.}}
+		\includegraphics[width=0.6\textwidth]{./jpeg/CVAE.jpeg}
+		\label{fig:VAE}
+	\end{figure}
+	\begin{itemize}
+		\item Learns a continuous vector representation;
+		\item Can the latent space be interpretable? How to enhance valid-decoding rate?
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Generative AI - Project Results}
-First 2--3 months:\footnote{Work carried out at the University of Glasgow.}
+	First 2--3 months:\footnote{Work carried out at the University of Glasgow.}
 
-\vspace{1em}
-\textit{Completed}:
+	\vspace{1em}
+	\textit{Completed}:
 
-\begin{description}
-\item[Review] literature of deep learning models $\rightarrow$ selected VAE ,
-\item[Implement] simplified model (Keras 3),
-\item[Deploy] quantised ONNX model in browser,
-\item[Package] document, test, notebooks.
-\end{description}
+	\begin{description}
+		\item[Review] literature of deep learning models $\rightarrow$ selected VAE ,
+		\item[Implement] simplified model (Keras 3),
+		\item[Deploy] quantised ONNX model in browser,
+		\item[Package] document, test, notebooks.
+	\end{description}
 
-\pause
+	\pause
 
-\vspace{1em}
-\textit{Planned}:
-\begin{description}
-  \item[Optimise] UV HOMO-LUMO gap,
-  \item[Select] candidates for robotic synthesis.
-\end{description}
+	\vspace{1em}
+	\textit{Planned}:
+	\begin{description}
+		\item[Optimise] UV HOMO-LUMO gap,
+		\item[Select] candidates for robotic synthesis.
+	\end{description}
 \end{frame}
 
 
 \begin{frame}{Object Detection - Overview}
-\begin{figure}
-\centering
-\caption{Project's Development Stages}
-\includegraphics[width=0.8\textwidth]{./flow.pdf}
-\end{figure}
-\vspace{0.8em}
-\hrule
-\vspace{0.4em}
-\footnotesize{\githubIcon{} \href{https://github.com/Megvii-BaseDetection/yolox}{Megvii-BaseDetection/yolox}}
+	\begin{figure}
+		\centering
+		\caption{Project's Development Stages}
+		\includegraphics[width=0.8\textwidth]{./flow.pdf}
+	\end{figure}
+	\vspace{0.8em}
+	\hrule
+	\vspace{0.4em}
+	\footnotesize{\githubIcon{} \href{https://github.com/Megvii-BaseDetection/yolox}{Megvii-BaseDetection/yolox}}
 \end{frame}
 
 
 \begin{frame}{Object Detection - Results}
-  \setbeamertemplate{itemize item}{\textbullet}
-  \begin{itemize}
-    \item Pseudonymisation of IDs at Zakodium (\href{https://mrz.zakodium.com}{demo site})
-    \item Frameworks: \tfIcon{} Tensorflow.js, \pytorchIcon{} Pytorch
-  \end{itemize}
-\pause
-\vspace{0.6em}
-\begin{figure}
-\centering
-\begin{subfigure}[t]{0.4\textwidth}
-\includegraphics[width=\textwidth]{./png/face_signature_detection_highlighted.png}
-\caption{Face and signature detection}
-\end{subfigure}
-\pause
-\begin{subfigure}[t]{0.4\textwidth}
-\includegraphics[width=\textwidth]{./png/face_barcode_mrz_detection_highlighted.png}
-\caption{Face, barcode, MRZ detection}
-\end{subfigure}
-\pause
-\caption{\copyright{} \href{https://commons.wikimedia.org/wiki/Category:Identity_cards_of_France}{European Union}, 1998--2026.}
-\end{figure}
+	\setbeamertemplate{itemize item}{\textbullet}
+	\begin{itemize}
+		\item Pseudonymisation of IDs at Zakodium (\href{https://mrz.zakodium.com}{demo site})
+		\item Frameworks: \tfIcon{} Tensorflow.js, \pytorchIcon{} Pytorch
+	\end{itemize}
+	\pause
+	\vspace{0.6em}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{./png/face_signature_detection_highlighted.png}
+			\caption{Face and signature detection}
+		\end{subfigure}
+		\pause
+		\begin{subfigure}[t]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{./png/face_barcode_mrz_detection_highlighted.png}
+			\caption{Face, barcode, MRZ detection}
+		\end{subfigure}
+		\pause
+		\caption{\copyright{} \href{https://commons.wikimedia.org/wiki/Category:Identity_cards_of_France}{European Union}, 1998--2026.}
+	\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Binary Data Manipulation - iobuffer}
-\texttt{iobuffer} is a helper to write binary parsers.
+	\texttt{iobuffer} is a helper to write binary parsers.
 
-\begin{minted}[bgcolor=Beige,highlightlines={4,9}]{typescript}
+	\begin{minted}[bgcolor=Beige,highlightlines={4,9}]{typescript}
 
 import { IOBuffer } from 'iobuffer';
 
@@ -195,39 +203,39 @@ io.writeChars('Hello world') // offset now 11
 
 \end{minted}
 
-\textit{Contributions}: text decoder, readArrays of typed-data, host-endianness detection.
+	\textit{Contributions}: text decoder, readArrays of typed-data, host-endianness detection.
 
 \end{frame}
 
 
 
 \begin{frame}{Other Projects}
-\small
-\begin{table}
-\begin{center}
-\begin{tabular}[t]{@{}lcp{3.7cm}@{}}
-  \toprule
-  \githubIcon{} Github Project & \npmIcon{} npm $\downarrow$ & Description \\[0.3em]
-  \midrule
-  \noalign{\vskip 0.5em}
-  \gHref{image-js}{iobuffer} & \iobuffer{}  & Binary data manipulation library \\[0.6em]
-  \gHref{mljs}{regression-simple-linear} & \regression{}  & Simple linear regression \\[0.6em]
-  \gHref{mljs}{regression-polynomial} & \regressionp{}  & Polynomial regression \\[0.6em]
-  \gHref{mljs}{fcnnls} & \fcnnls{}  & Fast combinatorial non-negative least squares \\[0.6em]
-  \gHref{cheminfo}{spc-parser} & \spc{}  & GRAMS \texttt{.spc} parser \\[0.6em]
-  \gHref{cheminfo}{wdf-parser} & \wdf{}  & WDF Raman file parser \\[0.6em]
+	\small
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[t]{@{}lcp{3.7cm}@{}}
+				\toprule
+				\githubIcon{} Github Project                 & \npmIcon{} npm $\downarrow$ & Description                                   \\[0.3em]
+				\midrule
+				\noalign{\vskip 0.5em}
+				\gHref{image-js}{iobuffer}                   & \iobuffer{}                 & Binary data manipulation library              \\[0.6em]
+				\gHref{mljs}{regression-simple-linear}       & \regression{}               & Simple linear regression                      \\[0.6em]
+				\gHref{mljs}{regression-polynomial}          & \regressionp{}              & Polynomial regression                         \\[0.6em]
+				\gHref{mljs}{fcnnls}                         & \fcnnls{}                   & Fast combinatorial non-negative least squares \\[0.6em]
+				\gHref{cheminfo}{spc-parser}                 & \spc{}                      & GRAMS \texttt{.spc} parser                    \\[0.6em]
+				\gHref{cheminfo}{wdf-parser}                 & \wdf{}                      & WDF Raman file parser                         \\[0.6em]
 
-  \href{https://mrz.zakodium.com}{IDs Project} & -- &  Pseudonymisation of IDs.\\
-\bottomrule
-\end{tabular}
-\end{center}
-\caption{\footnotesize Github hosted projects, excepting last (IDs) project.}
-\end{table}
+				\href{https://mrz.zakodium.com}{IDs Project} & --                          & Pseudonymisation of IDs.                      \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		\caption{\footnotesize Github hosted projects, excepting last (IDs) project.}
+	\end{table}
 \end{frame}
 
 \begin{frame}
-\begin{center}
-Thanks!
-\end{center}
+	\begin{center}
+		Thanks!
+	\end{center}
 \end{frame}
 \end{document}
